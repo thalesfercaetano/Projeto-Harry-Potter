@@ -1,5 +1,4 @@
-
-export const personagens = [
+const personagens = [
   {
     id: 1,
     nome: "Harry Potter",
@@ -141,3 +140,5 @@ export const personagens = [
     descricao: "De um estudante tímido a um herói corajoso que liderou a Armada de Dumbledore."
   }
 ];
+
+export default personagens
