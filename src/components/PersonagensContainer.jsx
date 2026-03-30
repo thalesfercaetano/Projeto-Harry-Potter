@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListaPersonagens from "./ListarPersonagens";
+import FiltrarPersonagens from "./FiltrarPersonagens";
 
 const PersonagensContainer = (props) => {
 
@@ -15,6 +16,11 @@ const PersonagensContainer = (props) => {
     return(
         <div>
             <h1>ESCOLA DE MAGIA E BRUXARIA</h1>
+            <FiltrarPersonagens 
+                busca={busca} 
+                setBusca={setBusca} 
+                setCasa={setCasa} 
+            /> 
             <ListaPersonagens personagensFiltrados={exibirPersonagens} />
         </div>
     )
