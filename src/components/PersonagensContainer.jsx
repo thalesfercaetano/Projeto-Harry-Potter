@@ -1,7 +1,8 @@
 import { useState } from "react";
+import ListaPersonagens from "./ListarPersonagens";
 
 const PersonagensContainer = (props) => {
-    
+
     const [busca, setBusca] = useState("")
     const [casa, setCasa] = useState("")
 
@@ -14,8 +15,10 @@ const PersonagensContainer = (props) => {
     return(
         <div>
             <h1>ESCOLA DE MAGIA E BRUXARIA</h1>
+            <ListaPersonagens personagensFiltrados={exibirPersonagens} />
         </div>
     )
 }
 
-export default PersonagensContainer
+
+export default PersonagensContainer;
