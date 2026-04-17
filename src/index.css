@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@source inline("border-grifinoria shadow-grifinoria/20 text-grifinoria-text border-sonserina shadow-sonserina/20 text-sonserina-text border-corvinal shadow-corvinal/20 text-corvinal-text border-lufalufa shadow-lufalufa/20 text-lufalufa-text");
+
+@theme {
+  --color-grifinoria: #dc2626;
+  --color-grifinoria-text: #ef4444;
+  --color-sonserina: #059669;
+  --color-sonserina-text: #10b981;
+  --color-corvinal: #2563eb;
+  --color-corvinal-text: #60a5fa;
+  --color-lufalufa: #f59e0b;
+  --color-lufalufa-text: #fbbf24;
+}
+
 body {
   background-color: #020617;
 }

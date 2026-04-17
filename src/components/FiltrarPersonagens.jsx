@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const CASAS_DISPONIVEIS = ["Grifinória", "Sonserina", "Corvinal", "Lufa-Lufa"];
 
@@ -13,6 +13,15 @@ const FiltrarPersonagens = ({
     const [aberto, setAberto] = useState(false);
     const dropdownRef = useRef(null);
 
+    useEffect(() => {
+        const handleClickFora = (e) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+                setAberto(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickFora);
+        return () => document.removeEventListener("mousedown", handleClickFora);
+    }, []);
 
     const textoBotao =
         casas.length === 0
