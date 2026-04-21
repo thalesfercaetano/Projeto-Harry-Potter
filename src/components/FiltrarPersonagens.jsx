@@ -3,6 +3,7 @@ import Dropdown from "./FiltrarPersonagens-components/Dropdown";
 import { UseClickOutside } from "./FiltrarPersonagens-components/UseClickOutside";
 
 const CASAS_DISPONIVEIS = ["Grifinória", "Sonserina", "Corvinal", "Lufa-Lufa"];
+const CARACTERISTICAS_DISPONIVEIS = ["Corajoso", "Inteligente", "Leal", "Ambicioso", "Determinado", "Paciente", "Sábio", "Forte"];
 
 const FiltrarPersonagens = ({
     busca,
@@ -11,17 +12,23 @@ const FiltrarPersonagens = ({
     alternarCasa,
     limparCasas,
     setAfiliacao,
+    caracteristicas,
+    alternarCaracteristica,
+    limparCaracteristicas
 }) => {
     const [aberto, setAberto] = useState(false);
     const [afiliacaoAberto, setAfiliacaoAberto] = useState(false);
+    const [caracteristicasAberto, setCaracteristicasAberto] = useState(false);
     const [afiliacaoAtual, setAfiliacaoAtual] = useState("");
 
     const dropdownRef = useRef(null);
     const afiliacaoRef = useRef(null);
+    const caracteristicasRef = useRef(null);
 
-    UseClickOutside([dropdownRef, afiliacaoRef], ()=>{
+    UseClickOutside([dropdownRef, afiliacaoRef, caracteristicasRef], ()=>{
         setAberto(false);
         setAfiliacaoAberto(false);
+        setCaracteristicasAberto(false);
     });
 
     const textoBotao =
@@ -32,6 +39,13 @@ const FiltrarPersonagens = ({
             : `${casas.length} casas selecionadas`;
 
     const textoAfiliacaoBotao = afiliacaoAtual || "Todas as afiliações";
+
+    const textoCaracteristicasBotao =
+        caracteristicas.length === 0
+            ? "Todas as características"
+            : caracteristicas.length === 1
+            ? caracteristicas[0]
+            : `${caracteristicas.length} características selecionadas`;
 
     const handleAfiliacaoChange = (value) => {
         setAfiliacaoAtual(value);
@@ -76,6 +90,38 @@ const FiltrarPersonagens = ({
                         {casa}
                     </label>
                 ))}
+            </Dropdown>
+
+            <Dropdown
+                label={textoCaracteristicasBotao}
+                isOpen={caracteristicasAberto}
+                setIsOpen={setCaracteristicasAberto}
+                containerRef={caracteristicasRef}
+            >
+                <button
+                    type="button"
+                    onClick={limparCaracteristicas}
+                    className="w-full text-left px-4 py-2 text-amber-400 hover:bg-slate-700 cursor-pointer border-b border-slate-700"
+                >
+                    Limpar tudo
+                </button>
+
+                <div className="max-h-60 overflow-y-auto">
+                    {CARACTERISTICAS_DISPONIVEIS.map((carac) => (
+                        <label
+                            key={carac}
+                            className="flex items-center gap-2 px-4 py-2 text-amber-400 hover:bg-slate-700 cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                checked={caracteristicas.includes(carac)}
+                                onChange={() => alternarCaracteristica(carac)}
+                                className="accent-amber-500 w-4 h-4 cursor-pointer" 
+                            />
+                            {carac}
+                        </label>
+                    ))}
+                </div>
             </Dropdown>
 
             <Dropdown

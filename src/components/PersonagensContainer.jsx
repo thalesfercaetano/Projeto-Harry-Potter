@@ -6,7 +6,7 @@ const PersonagensContainer = (props) => {
     const [busca, setBusca] = useState("");
     const [casas, setCasas] = useState([]);
     const [afiliacao, setAfiliacao] = useState("");
-
+    const [caracteristicas, setCaracteristicas] = useState([]);
 
     const alternarCasa = (casa) => {
         setCasas((prev) =>
@@ -16,7 +16,16 @@ const PersonagensContainer = (props) => {
         );
     };
 
+    const alternarCaracteristica = (carac) => {
+        setCaracteristicas((prev) =>
+            prev.includes(carac)
+            ? prev.filter ((c) => c !== carac)
+            : [...prev, carac]
+        );
+    };
+
     const limparCasas = () => setCasas([]);
+    const limparCaracteristicas = () => setCaracteristicas([]);
 
     const exibirPersonagens = props.personagens.filter((personagem) => {
         const filtroBusca = personagem.nome
@@ -25,7 +34,12 @@ const PersonagensContainer = (props) => {
         const filtroCasa = casas.length === 0 || casas.includes(personagem.casa);
         const filtroAfiliacao =
             afiliacao === "" || personagem.afiliacao === afiliacao;
-        return filtroBusca && filtroCasa && filtroAfiliacao;
+        const filtroCaracteristicas =
+            caracteristicas.length === 0 ||
+            caracteristicas.every((carac) =>
+                personagem.caracteristicas.includes(carac)
+            );
+        return filtroBusca && filtroCasa && filtroAfiliacao && filtroCaracteristicas;
     });
 
     return (
@@ -40,6 +54,9 @@ const PersonagensContainer = (props) => {
                 alternarCasa={alternarCasa}
                 limparCasas={limparCasas}
                 setAfiliacao={setAfiliacao}
+                caracteristicas={caracteristicas}
+                alternarCaracteristica={alternarCaracteristica}
+                limparCaracteristicas={limparCaracteristicas}
             />
             <ListaPersonagens personagensFiltrados={exibirPersonagens} />
         </div>
