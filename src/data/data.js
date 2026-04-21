@@ -20,13 +20,13 @@ import pomona from '../assets/personagens/pomona.webp'
 import neville from '../assets/personagens/neville.jpg'
 
 const personagens = [
-  
   {
     id: 1,
     nome: "Harry Potter",
     casa: "Grifinória",
     afiliacao: "Armada de Dumbledore",
     imagem: harry,
+    caracteristicas: ["Corajoso", "Leal", "Determinado"],
     descricao: "O Menino que Sobreviveu, famoso por sua cicatriz de raio e coragem inabalável."
   },
   {
@@ -35,6 +35,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Armada de Dumbledore",
     imagem: hermione,
+    caracteristicas: ["Inteligente", "Corajoso", "Sábio"],
     descricao: "A bruxa mais brilhante de sua era, mestre em feitiços e lógica."
   },
   {
@@ -43,6 +44,7 @@ const personagens = [
     casa: "Sonserina",
     afiliacao: "Comensais da Morte",
     imagem: draco,
+    caracteristicas: ["Ambicioso", "Astuto", "Sangue-puro"],
     descricao: "Membro de uma linhagem puro-sangue, rival de Harry e talentoso em Poções."
   },
   {
@@ -51,6 +53,7 @@ const personagens = [
     casa: "Corvinal",
     afiliacao: "Armada de Dumbledore",
     imagem: luna,
+    caracteristicas: ["Inteligente", "Sábio", "Paciente"],
     descricao: "Conhecida por sua excentricidade e por ver o mundo de uma forma única."
   },
   {
@@ -59,6 +62,7 @@ const personagens = [
     casa: "Lufa-Lufa",
     afiliacao: "Neutro",
     imagem: cedrico,
+    caracteristicas: ["Leal", "Forte", "Paciente"],
     descricao: "Um exemplo de lealdade e justiça, foi um dos campeões do Torneio Tribruxo."
   },
   {
@@ -67,6 +71,7 @@ const personagens = [
     casa: "Sonserina",
     afiliacao: "Ordem da Fênix",
     imagem: snape,
+    caracteristicas: ["Astuto", "Inteligente", "Determinado"],
     descricao: "O enigmático Mestre das Poções e ex-diretor da Sonserina."
   },
   {
@@ -75,6 +80,7 @@ const personagens = [
     casa: "Corvinal",
     afiliacao: "Armada de Dumbledore",
     imagem: cho,
+    caracteristicas: ["Inteligente", "Leal"],
     descricao: "Apanhadora do time de Quadribol da Corvinal e membro da Armada de Dumbledore."
   },
   {
@@ -83,6 +89,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Armada de Dumbledore",
     imagem: rony,
+    caracteristicas: ["Leal", "Corajoso"],
     descricao: "O melhor amigo de Harry, estrategista de xadrez bruxo e dono de um grande coração."
   },
   {
@@ -91,6 +98,7 @@ const personagens = [
     casa: "Sonserina",
     afiliacao: "Comensais da Morte",
     imagem: bellatrix,
+    caracteristicas: ["Forte", "Ambicioso", "Determinado"],
     descricao: "Uma Comensal da Morte fiel e extremamente perigosa em duelos."
   },
   {
@@ -99,6 +107,7 @@ const personagens = [
     casa: "Lufa-Lufa",
     afiliacao: "Neutro",
     imagem: newt,
+    caracteristicas: ["Paciente", "Leal", "Sábio"],
     descricao: "Magizoologista famoso por escrever 'Animais Fantásticos e Onde Habitam'."
   },
   {
@@ -107,6 +116,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Ordem da Fênix",
     imagem: dumbledore,
+    caracteristicas: ["Sábio", "Inteligente", "Forte"],
     descricao: "Considerado por muitos o maior bruxo de todos os tempos e diretor de Hogwarts."
   },
   {
@@ -115,6 +125,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Ordem da Fênix",
     imagem: minerva,
+    caracteristicas: ["Sábio", "Corajoso", "Determinado"],
     descricao: "Mestra em Transfiguração, rigorosa mas extremamente justa."
   },
   {
@@ -123,6 +134,7 @@ const personagens = [
     casa: "Sonserina",
     afiliacao: "Comensais da Morte",
     imagem: voldemort,
+    caracteristicas: ["Ambicioso", "Astuto", "Forte"],
     descricao: "O Lorde das Trevas que buscou a imortalidade e o controle do mundo bruxo."
   },
   {
@@ -131,6 +143,7 @@ const personagens = [
     casa: "Corvinal",
     afiliacao: "Neutro",
     imagem: gilderoy,
+    caracteristicas: ["Ambicioso", "Astuto"],
     descricao: "Um autor famoso especializado em feitiços de memória e... marketing pessoal."
   },
   {
@@ -139,6 +152,7 @@ const personagens = [
     casa: "Lufa-Lufa",
     afiliacao: "Ordem da Fênix",
     imagem: ninfadora,
+    caracteristicas: ["Corajoso", "Leal", "Determinado"],
     descricao: "Uma Aurora metamorfomaga capaz de mudar sua aparência à vontade."
   },
   {
@@ -147,6 +161,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Ordem da Fênix",
     imagem: sirius,
+    caracteristicas: ["Corajoso", "Leal", "Forte"],
     descricao: "O padrinho de Harry e o único a escapar de Azkaban por conta própria."
   },
   {
@@ -155,6 +170,7 @@ const personagens = [
     casa: "Sonserina",
     afiliacao: "Comensais da Morte",
     imagem: lucius,
+    caracteristicas: ["Sangue-puro", "Ambicioso", "Astuto"],
     descricao: "Um influente aristocrata bruxo e fervoroso seguidor das artes das trevas."
   },
   {
@@ -163,6 +179,7 @@ const personagens = [
     casa: "Corvinal",
     afiliacao: "Ordem da Fênix",
     imagem: filius,
+    caracteristicas: ["Inteligente", "Sábio", "Forte"],
     descricao: "Mestre de Feitiços e antigo campeão de duelos bruxos."
   },
   {
@@ -171,6 +188,7 @@ const personagens = [
     casa: "Lufa-Lufa",
     afiliacao: "Ordem da Fênix",
     imagem: pomona,
+    caracteristicas: ["Paciente", "Leal", "Sábio"],
     descricao: "Chefe do departamento de Herbologia e especialista em plantas mágicas."
   },
   {
@@ -179,6 +197,7 @@ const personagens = [
     casa: "Grifinória",
     afiliacao: "Armada de Dumbledore",
     imagem: neville,
+    caracteristicas: ["Corajoso", "Leal", "Determinado"],
     descricao: "De um estudante tímido a um herói corajoso que liderou a Armada de Dumbledore."
   }
 ];
