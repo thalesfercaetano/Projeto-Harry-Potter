@@ -14,7 +14,7 @@ const FiltrarPersonagens = ({
     setAfiliacao,
     caracteristicas,
     alternarCaracteristica,
-    limparCaracteristicas
+    limparCaracteristicas,
 }) => {
     const [aberto, setAberto] = useState(false);
     const [afiliacaoAberto, setAfiliacaoAberto] = useState(false);
@@ -55,6 +55,9 @@ const FiltrarPersonagens = ({
 
     return (
         <div className="w-full flex flex-row flex-wrap gap-6 justify-center items-start pt-5 mb-10">
+
+
+
             <input
                 type="text"
                 placeholder="Buscar personagem..."
